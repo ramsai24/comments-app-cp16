@@ -1,7 +1,180 @@
 /* Write your CSS here */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.bg-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 60%;
+  border: none;
+  border-bottom: 1px solid green;
+  padding: 30px;
+  margin: auto;
+}
+
+@media screen and (max-width: 576px) {
+  .bg-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .top-section {
+    order: 1;
+  }
+}
+hr {
+  flex-grow: 1;
+  min-width: 62%;
+}
+
 .top-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  margin: 20px;
+}
+
+.commentImg {
+  min-width: 350px;
+  height: 290px;
+  align-self: flex-end;
+}
+
+.para {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #1e293b;
+}
+
+.inputEl {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+.textareaEl {
+  width: 100%;
+  padding: 10px;
+
+  padding-left: 10px;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+.bottom-section {
+  display: flex;
+
+  flex-direction: column;
+  max-width: 60%;
+  border: 1px solid green;
+  padding: 30px;
+  margin: auto;
+}
+span {
+  margin: 10px;
+}
+
+.add-comment-btn {
+  margin-top: 20px;
+  background-color: #0284c7;
+  padding: 10px;
+  width: 140px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  color: #dee0e3;
+}
+
+.comment {
+  flex-wrap: wrap;
+}
+
+span {
+  background-color: #0284c7;
+  padding: 10px;
+  color: #dee0e3;
+}
+
+.comments-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.list-item {
+  list-style-type: none;
+  width: 100%;
+}
+
+.each-comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  padding-left: 20px;
+  border: 1px solid pink;
+  padding-top: 0px;
+  flex-wrap: wrap;
+}
+.comment-box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.time-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.like-delete-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.name {
+  border: 1px solid blue;
+  padding-right: 30px;
+}
+
+.initialName {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: orange;
+  text-align: center;
+  padding-top: 15px;
+  flex-grow: 0;
+  margin-right: 10px;
+}
+.like-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-img {
+  padding-right: 20px;
+}
+
+.liked {
+  color: #0b69ff;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.like {
+  color: #94a3b8;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
 }

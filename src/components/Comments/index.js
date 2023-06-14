@@ -4,15 +4,15 @@ import {v4 as uuidv4} from 'uuid'
 import './index.css'
 import CommentItem from '../CommentItem'
 
-// const initialContainerBackgroundClassNames = [
-//   'amber',
-//   'blue',
-//   'orange',
-//   'emerald',
-//   'teal',
-//   'red',
-//   'light-blue',
-// ]
+const initialContainerBackgroundClassNames = [
+  'amber',
+  'blue',
+  'orange',
+  'emerald',
+  'teal',
+  'red',
+  'light-blue',
+]
 
 // Write your code here
 
@@ -69,12 +69,13 @@ class Comments extends Component {
     console.log(commentsList)
 
     return (
-      <div>
-        <div>
-          <h1>Comments</h1>
-          <p>Say something about 4.0 Technologies</p>
+      <div className="app-container">
+        <div className="bg-container">
           <form className="top-section">
+            <h1>Comments</h1>
+            <p className="para">Say something about 4.0 Technologies</p>
             <input
+              className="inputEl"
               placeholder="Your Name"
               type="text"
               value={name}
@@ -82,28 +83,37 @@ class Comments extends Component {
             />
             <br />
             <textarea
+              className="textareaEl"
               type="text"
               value={comment}
               cols="10"
-              rows="10"
+              rows="7"
               onChange={this.textAreaEl}
               placeholder="Your Comment"
             >
               {' '}
             </textarea>
-            <button type="submit" onClick={this.addCommentbtn}>
+            <button
+              className="add-comment-btn"
+              type="submit"
+              onClick={this.addCommentbtn}
+            >
               Add Comment
             </button>
           </form>
           <img
+            className="commentImg"
             src="https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png"
             alt="comments"
           />
         </div>
+
         <div className="bottom-section">
-          <span id="commentsCount">{commentsList.length}</span>
-          <label htmlFor="commentsCount">Comments</label>
-          <ul>
+          <div>
+            <span id="commentsCount">{commentsList.length}</span>
+            <label htmlFor="commentsCount">Comments</label>
+          </div>
+          <ul className="comments-container">
             {commentsList.map(each => (
               <CommentItem
                 key={each.id}

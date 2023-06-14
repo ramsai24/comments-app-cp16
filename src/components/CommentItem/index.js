@@ -14,42 +14,44 @@ const CommentItem = props => {
   }
 
   const likeIsActive = isActive ? (
-    <div>
+    <div className="like-container">
       <img
+        className="like-img"
         id="like"
         src="https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png"
         alt="like"
       />
-      <button type="button" onClick={onLikeStatus}>
+      <button className="liked" type="button" onClick={onLikeStatus}>
         <label htmlFor="unLike">like</label>
       </button>
     </div>
   ) : (
-    <div>
+    <div className="like-container">
       <img
+        className="like-img"
         id="like"
         src="https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png"
         alt="like"
       />
-      <button type="button" onClick={onLikeStatus}>
-        <label htmlFor="unLike">like</label>
+      <button className="like" type="button" onClick={onLikeStatus}>
+        <label htmlFor="unLike">Like</label>
       </button>
     </div>
   )
 
   return (
-    <li>
-      <div>
-        <p>{name[0]}</p>
-        <div>
-          <div>
-            <h1>{name}</h1>
+    <li className="list-item">
+      <div className="comment-box">
+        <p className="initialName">{name[0].toUpperCase()}</p>
+        <div className="each-comment-container">
+          <div className="time-container">
+            <h1 className="name">{name}</h1>
             <p>{time}</p>
           </div>
-          <p>{comment}</p>
+          <p className="comment">{comment}</p>
         </div>
       </div>
-      <div>
+      <div className="like-delete-container">
         {likeIsActive}
         <button data-testid="delete" type="button" onClick={deleteId}>
           <img
@@ -58,6 +60,7 @@ const CommentItem = props => {
           />
         </button>
       </div>
+      <hr />
     </li>
   )
 }
